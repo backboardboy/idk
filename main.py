@@ -86,3 +86,20 @@ def check_win():
                 break
     
 
+
+player = "x"
+draw_board()
+print()
+while True:
+    column = int(input(player + " turn: column (1-7): "))
+    move(player, column)
+    draw_board()
+    winner = check_win()
+    if winner:
+        print(f"{winner} won")
+        break
+    
+    if player == "x":
+        player = "o"
+    else:
+        player = "x"
